@@ -33,7 +33,7 @@ function getSprites(ses, cinsiyet) {
   var sprite = {};
   sprite["tumu"] = [0, parseFloat(a[4].replace("\r", ""))];
 
-  for (i in a) {
+  for (let i in a) {
     var hece = a[i].replace(/\s/g, "").replace("\r", "");
 
     if (i < 12 || !hece.startsWith('"') || hece == '""') {
@@ -69,7 +69,7 @@ app.get("/k/:ses", function(req, res, next) {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  let kelime = req.url.substring(1);
+  //let kelime = req.url.substring(1);
 
   next(createError(404));
 });
